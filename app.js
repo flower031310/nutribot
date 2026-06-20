@@ -7,9 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const voiceOutputBtn = document.getElementById('voice-output-btn');
     const micBtn = document.getElementById('mic-btn');
     const imageUpload = document.getElementById('image-upload');
+    const landingOverview = document.getElementById('landing-overview');
+    const appContent = document.getElementById('app-content');
+    const enterAppBtn = document.getElementById('enter-app-btn');
 
     let isVoiceOutputEnabled = true;
     let selectedImageBase64 = null;
+
+    // --- Landing Page Transition ---
+    if (enterAppBtn) {
+        enterAppBtn.addEventListener('click', () => {
+            landingOverview.classList.add('hidden');
+            appContent.classList.remove('hidden');
+            void appContent.offsetWidth; // Force reflow
+            appContent.style.opacity = '1';
+        });
+    }
 
     // --- Feature 1: Dark Mode Toggle ---
     const savedTheme = localStorage.getItem('theme');
@@ -160,9 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (text) {
-            const p = document.createElement('p');
-            p.textContent = text;
-            textDiv.appendChild(p);
+            if (sender === 'ai' && window.marked) {
+                textDiv.innerHTML += marked.parse(text);
+            } else {
+                const p = document.createElement('p');
+                p.textContent = text;
+                textDiv.appendChild(p);
+            }
         }
 
         messageDiv.appendChild(avatar);
@@ -195,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             let modelName = "llama-3.3-70b-versatile";
             let messages = [
-                { role: "system", content: "You are a helpful AI Healthy Foods and Nutrients Assistant. Provide concise advice on nutrition without formatting with markdown asterisks if possible, so it speaks well." }
+                { role: "system", content: "You are NutriBot, an AI Healthy Foods and Nutrients Assistant. Provide concise advice on nutrition without formatting with markdown asterisks if possible, so it speaks well. CRITICAL: When recommending foods, creating a diet plan, or providing a food chart, ALWAYS format it as a Markdown Table. Include a column named 'Image' for the food picture. For the image URL, use Markdown image syntax: ![FoodName](https://image.pollinations.ai/prompt/{FoodName}?width=200&height=200). Replace {FoodName} with the actual name of the food encoded for a URL." }
             ];
 
             if (imageBase64) {

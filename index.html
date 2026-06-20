@@ -16,119 +16,134 @@
         <div class="blob color3"></div>
     </div>
 
-    <nav class="navbar glass-panel">
-        <div class="logo">
-            <span class="logo-icon">🌿</span>
-            <span class="logo-text">NutriBot</span>
+    <!-- 1. Minimalist Landing Overview -->
+    <div id="landing-overview" class="landing-overview">
+        <div class="overview-content">
+            <span class="logo-icon-large">🌿</span>
+            <h1>NutriBot</h1>
+            <p class="tagline">Your personal AI nutritionist. Experience visually rich diet plans, voice interactions, and instant meal scanning.</p>
+            <button id="enter-app-btn" class="btn-glow large-btn">Start Your Health Journey</button>
         </div>
-        <ul class="nav-links">
-            <li><button id="theme-toggle" class="btn-icon" title="Toggle Theme">☀️</button></li>
-            <li><a href="#discover">Discover</a></li>
-            <li><a href="#bento">Features</a></li>
-        </ul>
-    </nav>
+    </div>
 
-    <main>
-        <section id="discover" class="hero fade-in-up">
-            <div class="hero-text">
-                <h1>Smart Nutrition.<br><span class="gradient-text">Evolved.</span></h1>
-                <p>Experience the future of wellness with an AI assistant that sees, listens, and perfectly tailors your diet.</p>
+    <!-- 2. Main App Content (Hidden initially) -->
+    <div id="app-content" class="app-content hidden">
+        <nav class="navbar glass-panel">
+            <div class="logo">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">NutriBot</span>
             </div>
-            
-            <!-- Center-Stage Chatbot -->
-            <div class="chatbot-wrapper glass-panel reveal">
-                <div class="chatbot-header">
-                    <div class="header-left">
-                        <span class="status-dot"></span>
-                        <h3>NutriBot AI</h3>
-                    </div>
-                    <div class="header-actions">
-                        <button id="export-pdf-btn" class="btn-icon" title="Export Chat to PDF">📄</button>
-                        <button id="voice-output-btn" class="btn-icon active" title="Toggle AI Voice Output">🔊</button>
-                    </div>
-                </div>
-                <div class="chat-window" id="chat-window">
-                    <div class="message ai">
-                        <div class="avatar">🌿</div>
-                        <div class="text"><p>Welcome to the future of health. How can I assist you today?</p></div>
-                    </div>
-                </div>
-                <div class="input-area">
-                    <label for="image-upload" class="btn-icon image-btn" title="Upload Meal Photo">📷</label>
-                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
-                    <button id="mic-btn" class="btn-icon mic-btn" title="Speak">🎙️</button>
-                    <input type="text" id="chat-input" placeholder="Type or speak...">
-                    <button id="send-btn" class="btn-glow">Send</button>
-                </div>
-            </div>
-        </section>
+            <ul class="nav-links">
+                <li><button id="theme-toggle" class="btn-icon" title="Toggle Theme">☀️</button></li>
+                <li><a href="#discover">Discover</a></li>
+                <li><a href="#bento">Features</a></li>
+            </ul>
+        </nav>
 
-        <!-- Bento Box Section -->
-        <section id="bento" class="bento-container reveal">
-            <div class="bento-grid">
-                <!-- Large Card: Meal Vision -->
-                <div class="bento-card bento-large glass-panel hover-tilt">
-                    <div class="bento-content">
-                        <span class="bento-icon">📸</span>
-                        <h2>Vision AI</h2>
-                        <p>Upload a photo of your meal and let the AI instantly analyze calories, macronutrients, and health benefits using Groq's multimodal architecture.</p>
+        <main>
+            <section id="discover" class="hero fade-in-up">
+                <div class="hero-text">
+                    <h1>Smart Nutrition.<br><span class="gradient-text">Evolved.</span></h1>
+                    <p>Experience the future of wellness with an AI assistant that sees, listens, and perfectly tailors your diet.</p>
+                </div>
+                
+                <!-- Center-Stage Chatbot -->
+                <div class="chatbot-wrapper glass-panel reveal">
+                    <div class="chatbot-header">
+                        <div class="header-left">
+                            <span class="status-dot"></span>
+                            <h3>NutriBot AI</h3>
+                        </div>
+                        <div class="header-actions">
+                            <button id="export-pdf-btn" class="btn-icon" title="Export Chat to PDF">📄</button>
+                            <button id="voice-output-btn" class="btn-icon active" title="Toggle AI Voice Output">🔊</button>
+                        </div>
+                    </div>
+                    <div class="chat-window" id="chat-window">
+                        <div class="message ai">
+                            <div class="avatar">🌿</div>
+                            <div class="text"><p>Welcome to the future of health. How can I assist you today?</p></div>
+                        </div>
+                    </div>
+                    <div class="input-area">
+                        <label for="image-upload" class="btn-icon image-btn" title="Upload Meal Photo">📷</label>
+                        <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                        <button id="mic-btn" class="btn-icon mic-btn" title="Speak">🎙️</button>
+                        <input type="text" id="chat-input" placeholder="Type or speak...">
+                        <button id="send-btn" class="btn-glow">Send</button>
                     </div>
                 </div>
+            </section>
 
-                <!-- Medium Card: Voice -->
-                <div class="bento-card bento-tall glass-panel hover-tilt">
-                    <div class="bento-content">
-                        <span class="bento-icon">🗣️</span>
-                        <h2>Voice Interface</h2>
-                        <p>Ditch the keyboard. Talk to NutriBot naturally and hear it speak back in real-time.</p>
+            <!-- Bento Box Section -->
+            <section id="bento" class="bento-container reveal">
+                <div class="bento-grid">
+                    <!-- Large Card: Meal Vision -->
+                    <div class="bento-card bento-large glass-panel hover-tilt">
+                        <div class="bento-content">
+                            <span class="bento-icon">📸</span>
+                            <h2>Vision AI</h2>
+                            <p>Upload a photo of your meal and let the AI instantly analyze calories, macronutrients, and health benefits using Groq's multimodal architecture.</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Small Cards -->
-                <div class="bento-card bento-small glass-panel hover-tilt">
-                    <div class="bento-content">
-                        <span class="bento-icon">📄</span>
-                        <h3>Export PDF</h3>
-                        <p>Save your diet plans instantly.</p>
+                    <!-- Medium Card: Voice -->
+                    <div class="bento-card bento-tall glass-panel hover-tilt">
+                        <div class="bento-content">
+                            <span class="bento-icon">🗣️</span>
+                            <h2>Voice Interface</h2>
+                            <p>Ditch the keyboard. Talk to NutriBot naturally and hear it speak back in real-time.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="bento-card bento-small glass-panel hover-tilt">
-                    <div class="bento-content">
-                        <span class="bento-icon">⚡</span>
-                        <h3>Blazing Fast</h3>
-                        <p>Powered by Groq LPUs.</p>
+                    <!-- Small Cards -->
+                    <div class="bento-card bento-small glass-panel hover-tilt">
+                        <div class="bento-content">
+                            <span class="bento-icon">📄</span>
+                            <h3>Export PDF</h3>
+                            <p>Save your diet plans instantly.</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Wide Card: Benefits -->
-                <div class="bento-card bento-wide glass-panel hover-tilt">
-                    <div class="bento-content">
-                        <div class="stats-row">
-                            <div class="stat">
-                                <h4>24/7</h4>
-                                <span>Availability</span>
-                            </div>
-                            <div class="stat">
-                                <h4>100%</h4>
-                                <span>Personalized</span>
-                            </div>
-                            <div class="stat">
-                                <h4>360°</h4>
-                                <span>Wellness</span>
+                    <div class="bento-card bento-small glass-panel hover-tilt">
+                        <div class="bento-content">
+                            <span class="bento-icon">⚡</span>
+                            <h3>Blazing Fast</h3>
+                            <p>Powered by Groq LPUs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Wide Card: Benefits -->
+                    <div class="bento-card bento-wide glass-panel hover-tilt">
+                        <div class="bento-content">
+                            <div class="stats-row">
+                                <div class="stat">
+                                    <h4>24/7</h4>
+                                    <span>Availability</span>
+                                </div>
+                                <div class="stat">
+                                    <h4>100%</h4>
+                                    <span>Personalized</span>
+                                </div>
+                                <div class="stat">
+                                    <h4>360°</h4>
+                                    <span>Wellness</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <footer>
-        <p>&copy; 2026 NutriBot Advanced Health System.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2026 NutriBot Advanced Health System.</p>
+        </footer>
+    </div>
 
+    <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
