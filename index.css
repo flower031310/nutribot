@@ -13,6 +13,16 @@
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode {
+    --bg-color: #0f172a;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --white: #1e293b;
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --primary-green-light: #064e3b;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -66,6 +76,35 @@ a {
     box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
 }
 
+.btn-icon {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon:hover {
+    transform: scale(1.1);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.mic-btn.listening {
+    color: #ef4444;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
 /* Glassmorphism utility */
 .glass-card {
     background: var(--glass-bg);
@@ -111,6 +150,10 @@ a {
     color: var(--primary-green);
 }
 
+body.dark-mode .navbar {
+    background: rgba(30, 41, 59, 0.9);
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -119,6 +162,10 @@ a {
     padding: 120px 5% 80px;
     min-height: 100vh;
     background: linear-gradient(135deg, #e0f2fe 0%, #d1fae5 100%);
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #020617 0%, #064e3b 100%);
 }
 
 .hero-content {
@@ -131,6 +178,13 @@ a {
     line-height: 1.2;
     margin-bottom: 20px;
     background: linear-gradient(135deg, #0f172a, var(--primary-green-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .hero-content h1 {
+    background: linear-gradient(135deg, #f8fafc, var(--primary-green));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -324,6 +378,10 @@ h2 {
     align-items: center;
 }
 
+body.dark-mode .chatbot-section {
+    background: linear-gradient(135deg, #064e3b 0%, var(--bg-color) 100%);
+}
+
 .chatbot-container {
     width: 100%;
     max-width: 800px;
@@ -339,7 +397,22 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-actions button {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.header-actions button:hover {
+    opacity: 1;
 }
 
 .chatbot-header .status {
@@ -421,30 +494,39 @@ h2 {
 
 .message.user .text {
     background: var(--primary-green);
-    color: var(--white);
+    color: #ffffff;
     border-top-right-radius: 5px;
+}
+
+.message img.uploaded-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 5px;
 }
 
 .input-area {
     padding: 20px;
     background: var(--white);
     display: flex;
+    align-items: center;
     gap: 10px;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid var(--glass-border);
 }
 
-.input-area input {
+.input-area input[type="text"] {
     flex: 1;
     padding: 12px 20px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--glass-border);
     border-radius: 30px;
     outline: none;
     font-size: 1rem;
     font-family: inherit;
+    background: var(--bg-color);
+    color: var(--text-main);
     transition: border-color 0.3s ease;
 }
 
-.input-area input:focus {
+.input-area input[type="text"]:focus {
     border-color: var(--primary-green);
 }
 
