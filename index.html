@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Healthy Foods and Nutrients Assistant</title>
+    <meta name="description" content="An AI-powered nutrition assistant that provides healthy food recommendations, nutrient information, diet suggestions, and wellness guidance.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🌿</span>
+            <span class="logo-text">AI Healthy Foods and Nutrients Assistant</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#chatbot" class="btn-primary-small">Try Now</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Smart Nutrition for a Healthy Life</h1>
+            <p>An intelligent AI assistant that helps users discover healthy foods, nutrients, balanced diets, calorie information, and personalized health guidance.</p>
+            <a href="#chatbot" class="btn-primary">Start Chatting</a>
+        </div>
+        <div class="hero-image">
+            <div class="glass-card decorative-card">
+                <div class="card-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="card-body">
+                    <div class="chat-bubble ai">Hello! I'm your nutrition assistant. How can I help you eat healthier today?</div>
+                    <div class="chat-bubble user">What are some good sources of plant-based protein?</div>
+                    <div class="chat-bubble ai">Great question! Lentils, chickpeas, quinoa, and tofu are excellent sources of plant-based protein...</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-icon">💬</div>
+                <h3>1. Ask Questions</h3>
+                <p>User enters food or nutrition-related questions</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">🧠</div>
+                <h3>2. AI Analyzes</h3>
+                <p>AI analyzes the query</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">✨</div>
+                <h3>3. Get Recommendations</h3>
+                <p>AI provides personalized nutrition guidance</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">🥗</div>
+                <h3>4. Food & Nutrients</h3>
+                <p>Shows healthy food recommendations and nutrient details</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">🍎</div>
+                <h3>Healthy Food Suggestions</h3>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Nutrient Information</h3>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔥</div>
+                <h3>Calorie Guidance</h3>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🍽️</div>
+                <h3>Diet Recommendations</h3>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🏃‍♂️</div>
+                <h3>Healthy Lifestyle Tips</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <h2>Key Benefits</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="icon">❤️</div>
+                <h3>Better health awareness</h3>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">🥗</div>
+                <h3>Personalized food suggestions</h3>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">🌱</div>
+                <h3>Healthy lifestyle support</h3>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">⚖️</div>
+                <h3>Balanced diet guidance</h3>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">🤖</div>
+                <h3>24/7 AI assistance</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="chatbot" class="chatbot-section">
+        <div class="chatbot-container glass-card">
+            <div class="chatbot-header">
+                <h3>NutriBot AI</h3>
+                <span class="status">Online</span>
+            </div>
+            <div class="chat-window" id="chat-window">
+                <div class="message ai">
+                    <div class="avatar">🌿</div>
+                    <div class="text">Hi there! I'm your Healthy Foods and Nutrients Assistant. What would you like to know about nutrition today?</div>
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="chat-input" placeholder="Type your nutrition question here...">
+                <button id="send-btn" class="btn-primary-small">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 AI Healthy Foods and Nutrients Assistant. AI Nutrition Guide.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
