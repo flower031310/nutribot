@@ -126,6 +126,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Scroll Animations (Intersection Observer) ---
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+    
+    revealElements.forEach(el => revealOnScroll.observe(el));
+
     // Chatbot Logic
     const addMessage = (text, sender, imageUrl = null) => {
         const messageDiv = document.createElement('div');

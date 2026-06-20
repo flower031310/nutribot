@@ -3,156 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Healthy Foods and Nutrients Assistant</title>
-    <meta name="description" content="An AI-powered nutrition assistant that provides healthy food recommendations, nutrient information, diet suggestions, and wellness guidance.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>NutriBot - Futuristic Wellness</title>
+    <meta name="description" content="An advanced AI-powered nutrition assistant with Vision AI, Voice interaction, and personalized diet plans.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <nav class="navbar">
+<body class="dark-mode">
+    <!-- Animated Gradient Background -->
+    <div class="bg-mesh">
+        <div class="blob color1"></div>
+        <div class="blob color2"></div>
+        <div class="blob color3"></div>
+    </div>
+
+    <nav class="navbar glass-panel">
         <div class="logo">
             <span class="logo-icon">🌿</span>
-            <span class="logo-text">AI Healthy Foods and Nutrients Assistant</span>
+            <span class="logo-text">NutriBot</span>
         </div>
         <ul class="nav-links">
-            <li><button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark Mode" title="Toggle Dark Mode">🌙</button></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#chatbot" class="btn-primary-small">Try Now</a></li>
+            <li><button id="theme-toggle" class="btn-icon" title="Toggle Theme">☀️</button></li>
+            <li><a href="#discover">Discover</a></li>
+            <li><a href="#bento">Features</a></li>
         </ul>
     </nav>
 
-    <header class="hero" id="hero">
-        <div class="hero-content">
-            <h1>Smart Nutrition for a Healthy Life</h1>
-            <p>An intelligent AI assistant that helps users discover healthy foods, nutrients, balanced diets, calorie information, and personalized health guidance.</p>
-            <a href="#chatbot" class="btn-primary">Start Chatting</a>
-        </div>
-        <div class="hero-image">
-            <div class="glass-card decorative-card">
-                <div class="card-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
+    <main>
+        <section id="discover" class="hero fade-in-up">
+            <div class="hero-text">
+                <h1>Smart Nutrition.<br><span class="gradient-text">Evolved.</span></h1>
+                <p>Experience the future of wellness with an AI assistant that sees, listens, and perfectly tailors your diet.</p>
+            </div>
+            
+            <!-- Center-Stage Chatbot -->
+            <div class="chatbot-wrapper glass-panel reveal">
+                <div class="chatbot-header">
+                    <div class="header-left">
+                        <span class="status-dot"></span>
+                        <h3>NutriBot AI</h3>
+                    </div>
+                    <div class="header-actions">
+                        <button id="export-pdf-btn" class="btn-icon" title="Export Chat to PDF">📄</button>
+                        <button id="voice-output-btn" class="btn-icon active" title="Toggle AI Voice Output">🔊</button>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="chat-bubble ai">Hello! I'm your nutrition assistant. How can I help you eat healthier today?</div>
-                    <div class="chat-bubble user">What are some good sources of plant-based protein?</div>
-                    <div class="chat-bubble ai">Great question! Lentils, chickpeas, quinoa, and tofu are excellent sources of plant-based protein...</div>
+                <div class="chat-window" id="chat-window">
+                    <div class="message ai">
+                        <div class="avatar">🌿</div>
+                        <div class="text"><p>Welcome to the future of health. How can I assist you today?</p></div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="how-it-works" class="how-it-works">
-        <h2>How It Works</h2>
-        <div class="steps-container">
-            <div class="step">
-                <div class="step-icon">💬</div>
-                <h3>1. Ask Questions</h3>
-                <p>User enters food or nutrition-related questions</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">🧠</div>
-                <h3>2. AI Analyzes</h3>
-                <p>AI analyzes the query</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">✨</div>
-                <h3>3. Get Recommendations</h3>
-                <p>AI provides personalized nutrition guidance</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">🥗</div>
-                <h3>4. Food & Nutrients</h3>
-                <p>Shows healthy food recommendations and nutrient details</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="features">
-        <h2>Key Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="icon">🍎</div>
-                <h3>Healthy Food Suggestions</h3>
-            </div>
-            <div class="feature-card">
-                <div class="icon">📊</div>
-                <h3>Nutrient Information</h3>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🔥</div>
-                <h3>Calorie Guidance</h3>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🍽️</div>
-                <h3>Diet Recommendations</h3>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🏃‍♂️</div>
-                <h3>Healthy Lifestyle Tips</h3>
-            </div>
-        </div>
-    </section>
-
-    <section id="benefits" class="benefits">
-        <h2>Key Benefits</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="icon">❤️</div>
-                <h3>Better health awareness</h3>
-            </div>
-            <div class="benefit-card">
-                <div class="icon">🥗</div>
-                <h3>Personalized food suggestions</h3>
-            </div>
-            <div class="benefit-card">
-                <div class="icon">🌱</div>
-                <h3>Healthy lifestyle support</h3>
-            </div>
-            <div class="benefit-card">
-                <div class="icon">⚖️</div>
-                <h3>Balanced diet guidance</h3>
-            </div>
-            <div class="benefit-card">
-                <div class="icon">🤖</div>
-                <h3>24/7 AI assistance</h3>
-            </div>
-        </div>
-    </section>
-
-    <section id="chatbot" class="chatbot-section">
-        <div class="chatbot-container glass-card">
-            <div class="chatbot-header">
-                <h3>NutriBot AI</h3>
-                <div class="header-actions">
-                    <button id="export-pdf-btn" class="btn-icon" title="Export Chat to PDF">📄</button>
-                    <button id="voice-output-btn" class="btn-icon active" title="Toggle AI Voice Output">🔊</button>
-                    <span class="status">Online</span>
+                <div class="input-area">
+                    <label for="image-upload" class="btn-icon image-btn" title="Upload Meal Photo">📷</label>
+                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                    <button id="mic-btn" class="btn-icon mic-btn" title="Speak">🎙️</button>
+                    <input type="text" id="chat-input" placeholder="Type or speak...">
+                    <button id="send-btn" class="btn-glow">Send</button>
                 </div>
             </div>
-            <div class="chat-window" id="chat-window">
-                <div class="message ai">
-                    <div class="avatar">🌿</div>
-                    <div class="text">Hi there! I'm your Healthy Foods and Nutrients Assistant. What would you like to know about nutrition today?</div>
+        </section>
+
+        <!-- Bento Box Section -->
+        <section id="bento" class="bento-container reveal">
+            <div class="bento-grid">
+                <!-- Large Card: Meal Vision -->
+                <div class="bento-card bento-large glass-panel hover-tilt">
+                    <div class="bento-content">
+                        <span class="bento-icon">📸</span>
+                        <h2>Vision AI</h2>
+                        <p>Upload a photo of your meal and let the AI instantly analyze calories, macronutrients, and health benefits using Groq's multimodal architecture.</p>
+                    </div>
+                </div>
+
+                <!-- Medium Card: Voice -->
+                <div class="bento-card bento-tall glass-panel hover-tilt">
+                    <div class="bento-content">
+                        <span class="bento-icon">🗣️</span>
+                        <h2>Voice Interface</h2>
+                        <p>Ditch the keyboard. Talk to NutriBot naturally and hear it speak back in real-time.</p>
+                    </div>
+                </div>
+
+                <!-- Small Cards -->
+                <div class="bento-card bento-small glass-panel hover-tilt">
+                    <div class="bento-content">
+                        <span class="bento-icon">📄</span>
+                        <h3>Export PDF</h3>
+                        <p>Save your diet plans instantly.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-small glass-panel hover-tilt">
+                    <div class="bento-content">
+                        <span class="bento-icon">⚡</span>
+                        <h3>Blazing Fast</h3>
+                        <p>Powered by Groq LPUs.</p>
+                    </div>
+                </div>
+
+                <!-- Wide Card: Benefits -->
+                <div class="bento-card bento-wide glass-panel hover-tilt">
+                    <div class="bento-content">
+                        <div class="stats-row">
+                            <div class="stat">
+                                <h4>24/7</h4>
+                                <span>Availability</span>
+                            </div>
+                            <div class="stat">
+                                <h4>100%</h4>
+                                <span>Personalized</span>
+                            </div>
+                            <div class="stat">
+                                <h4>360°</h4>
+                                <span>Wellness</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="input-area">
-                <label for="image-upload" class="btn-icon image-btn" title="Upload Meal Photo">📷</label>
-                <input type="file" id="image-upload" accept="image/*" style="display: none;">
-                <button id="mic-btn" class="btn-icon mic-btn" title="Speak">🎙️</button>
-                <input type="text" id="chat-input" placeholder="Type or say your question here...">
-                <button id="send-btn" class="btn-primary-small">Send</button>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 AI Healthy Foods and Nutrients Assistant. AI Nutrition Guide.</p>
-        </div>
+        <p>&copy; 2026 NutriBot Advanced Health System.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
