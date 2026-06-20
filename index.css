@@ -214,3 +214,20 @@ footer { text-align: center; padding: 40px; color: var(--text-muted); }
 .message .text th, .message .text td { padding: 10px; border: 1px solid var(--glass-border); text-align: left; }
 .message .text th { background: rgba(16, 185, 129, 0.2); font-weight: 600; color: var(--text-main); }
 .message .text img { max-width: 150px; border-radius: 8px; display: block; }
+
+/* --- Dynamic Mouse Glow --- */
+#mouse-glow {
+    position: fixed;
+    top: -150px; left: -150px; /* Hide initially offscreen */
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+body.dark-mode #mouse-glow {
+    mix-blend-mode: color-dodge;
+}

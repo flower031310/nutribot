@@ -40,7 +40,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Feature 2: PDF Export ---
+    // --- Dynamic Mouse Glow ---
+    const mouseGlow = document.createElement('div');
+    mouseGlow.id = 'mouse-glow';
+    document.body.appendChild(mouseGlow);
+
+    window.addEventListener('mousemove', (e) => {
+        requestAnimationFrame(() => {
+            mouseGlow.style.left = `${e.clientX}px`;
+            mouseGlow.style.top = `${e.clientY}px`;
+        });
+    });
+
+    const addGlowHoverEffect = () => {
+        const interactables = document.querySelectorAll('button, a, .glass-panel, input, label');
+        interactables.forEach(el => {
+            // Avoid adding multiple listeners
+            if (!el.dataset.glowHover) {
+                el.dataset.glowHover = 'true';
+                el.addEventListener('mouseenter', () => {
+                    mouseGlow.style.width = '400px';
+                    mouseGlow.style.height = '400px';
+                    mouseGlow.style.background = 'radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    mouseGlow.style.width = '300px';
+                    mouseGlow.style.height = '300px';
+                    mouseGlow.style.background = 'radial-gradient(circle, var(--primary-glow) 0%, transparent 70%)';
+                });
+            }
+        });
+    };
+    addGlowHoverEffect(); // Call initially
+
+    // --- PDF Export ---
     if (exportPdfBtn) {
         exportPdfBtn.addEventListener('click', () => {
             const element = document.getElementById('chat-window');
